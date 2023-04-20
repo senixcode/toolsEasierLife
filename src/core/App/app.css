@@ -29,6 +29,7 @@
   gap: 2rem;
   justify-content: center;
 }
+
 .cards__item{
   padding: 15px;
   width: 600px;
@@ -36,11 +37,15 @@
   transition: 0.3s;
   border-radius: 5px; /* 5px rounded corners */
 }
+
 .cards__item h3{
   font-size: 1.8rem;
 }
+
 .cards__item h3 small{
   font-weight: lighter;
+  font-style: italic;
+  margin-left: 0.8rem;
 }
 .cards__item p{
   font-size: 1.4rem;
