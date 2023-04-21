@@ -1,14 +1,11 @@
 import React from 'react'
+import CardHeader from '../card-header/CardHeader'
+import { getTypeDetail } from '../../../utils/getTypeDetail'
 
-const getTypeDetail = (value) => {
-    if(value === 1) return "Income"
-    if(value === 2) return "Egress"
-    return ""
-  }
-
-function CardDetail({detail}) {
+function CardDetail({detail, handleOpenModal}) {
     return (
         <div className='cards__item'>
+           <CardHeader handleOpenModal={handleOpenModal}/>
             <div>
                 <h3 className='cards__item-title'>{detail.name}
                     <small>{getTypeDetail(detail.detailTypeId)}</small>
