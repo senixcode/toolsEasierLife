@@ -1,6 +1,10 @@
+import { useContext } from 'react'
 import './modalRegister.css'
+import ModalContext from '../../../../../../core/context/ModalContext'
 
-const RegisterDetail = ({handleOpenModal}) => (
+const RegisterDetail = () => {
+  const { closeModal } = useContext(ModalContext)
+  return(
 
   <form className="container-form">
     <div>
@@ -9,7 +13,7 @@ const RegisterDetail = ({handleOpenModal}) => (
     </div>
     <div>
       <label htmlFor="">Detail Type </label>
-      <select name="" id="" value={0} className="input">
+      <select name="" id="" defaultValue={0} className="input">
         <option value="0" disabled></option>
         <option value="1" >INCOME</option>
         <option value="2" >EGRESS</option>
@@ -28,10 +32,10 @@ const RegisterDetail = ({handleOpenModal}) => (
       <textarea type="text" name='description' rows={3} className="input" />
     </div>
     <div className="container-btns">
-      <button onClick={handleOpenModal} className="btn secondary">Cancelar</button>
+      <button onClick={closeModal} className="btn secondary">Cancelar</button>
       <button className="btn primary">Guardar</button>
     </div>
   </form>
-)
+)}
 
 export default RegisterDetail

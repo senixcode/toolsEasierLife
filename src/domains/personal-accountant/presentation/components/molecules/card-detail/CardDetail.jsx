@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import CardHeader from '../card-header/CardHeader'
 import { getTypeDetail } from '../../../utils/getTypeDetail'
+import ModalContext from '../../../../../../core/context/ModalContext'
 
-function CardDetail({detail, handleOpenModal}) {
+function CardDetail({detail}) {
+   
     return (
         <div className='cards__item'>
-           <CardHeader handleOpenModal={handleOpenModal}/>
+           <CardHeader />
             <div>
                 <h3 className='cards__item-title'>{detail.name}
                     <small>{getTypeDetail(detail.detailTypeId)}</small>

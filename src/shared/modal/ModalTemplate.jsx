@@ -1,29 +1,31 @@
 import Modal from "react-modal";
 import "./modal.css";
+import { useContext } from "react";
+import ModalContext from "../../core/context/ModalContext";
 
 const ModalTemplate = ({
-  isOpen,
-  onRequestClose,
   children,
 }) => {
 
+  const { modalState, closeModal } = useContext(ModalContext)
+
   return (
     <Modal
-    isOpen={isOpen}
-    onRequestClose={() => onRequestClose()}
-    contentLabel="Modal"
-    className={{
-      base: "modal-base",
-      afterOpen: "modal-base_after-open",
-      beforeClose: "modal-base_before-close"
-    }}
-    overlayClassName={{
-      base: "overlay-base",
-      afterOpen: "overlay-base_after-open",
-      beforeClose: "overlay-base_before-close"
-    }}
-    shouldCloseOnOverlayClick={true}
-    closeTimeoutMS={2000}
+      isOpen={modalState.open}
+      onRequestClose={closeModal}
+      contentLabel="Modal"
+      className={{
+        base: "modal-base",
+        afterOpen: "modal-base_after-open",
+        beforeClose: "modal-base_before-close"
+      }}
+      overlayClassName={{
+        base: "overlay-base",
+        afterOpen: "overlay-base_after-open",
+        beforeClose: "overlay-base_before-close"
+      }}
+      shouldCloseOnOverlayClick={true}
+      closeTimeoutMS={2000}
     >
       {children}
     </Modal>

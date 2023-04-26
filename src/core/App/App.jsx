@@ -1,17 +1,23 @@
 
 // imports pages
-
 import PersonalAccountant from '../../domains/personal-accountant/presentation/pages/PersonalAccountant'
+// imports providers
+import ModalProvider from '../providers/ModalProvider'
 //imports Libreries
- import Modal from 'react-modal'
+import Modal from 'react-modal'
 //import styles
 import './app.css'
 
- Modal.setAppElement("#root")
+Modal.setAppElement("#root")
 
 function App() {
-  
-  return <PersonalAccountant/>
+
+  return (
+    <ModalProvider>
+
+      <PersonalAccountant />
+    </ModalProvider>
+  )
 }
 
 

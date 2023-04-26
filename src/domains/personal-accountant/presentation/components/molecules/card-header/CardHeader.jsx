@@ -1,15 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import * as icon from '@coreui/icons'
 import IconCustom from '../../atoms/iconcustom/IconCustom'
 import './cardHeader.css'
+import ModalContext from '../../../../../../core/context/ModalContext'
 
-function CardHeader({ handleOpenModal }) {
-
+function CardHeader() {
+    const { handleEditerModal } = useContext(ModalContext)
     return (
         <div className='card__header'>
             <IconCustom
                 btnClass="btn-icon"
-                ciconOnclick={handleOpenModal}
+                ciconOnclick={handleEditerModal}
                 icon={icon.cilPencil}
             />
             <IconCustom
