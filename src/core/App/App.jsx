@@ -14,7 +14,6 @@ function App() {
 
   return (
     <ModalProvider>
-
       <PersonalAccountant />
     </ModalProvider>
   )
