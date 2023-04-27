@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import HeaderModal from '../../../../../../shared/modal/components/header/HeaderModal'
+import HeaderModal from '../../../../../../shared/presentation/components/atoms/header-modal/HeaderModal'
 import RegisterDetail from '../../organisms/register-detail/ModalRegister'
-import ModalTemplate from '../../../../../../shared/modal/ModalTemplate'
+import ModalTemplate from '../../../../../../shared/presentation/components/molecules/modal-template/ModalTemplate'
 import ModalContext from '../../../../../../core/context/ModalContext';
 import { ACTIONS_MODALS } from '../../../../../../core/const/actionsModal.cons';
 
