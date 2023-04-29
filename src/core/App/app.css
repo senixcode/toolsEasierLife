@@ -24,8 +24,9 @@
 }
 
 .cards__container{
-  margin-top: 4rem;
   display: flex;
+  margin-top: 4rem;
+  flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
 }
