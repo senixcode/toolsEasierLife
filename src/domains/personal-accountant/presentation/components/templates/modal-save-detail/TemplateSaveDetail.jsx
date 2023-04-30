@@ -12,7 +12,7 @@ const getTitle = (modalState) => {
 
 function TemplateSaveDetail() {
   const { modalState } = useContext(ModalContext)
-  console.log("modalState", modalState);
+
   return (
     <ModalTemplate>
       <HeaderModal title={`${getTitle(modalState)} Detail`} />
