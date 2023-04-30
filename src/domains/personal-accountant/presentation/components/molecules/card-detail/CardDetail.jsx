@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import CardHeader from '../card-header/CardHeader'
 import { getTypeDetail } from '../../../utils/getTypeDetail'
-import ModalContext from '../../../../../../core/context/ModalContext'
 
 function CardDetail({detail}) {
    
