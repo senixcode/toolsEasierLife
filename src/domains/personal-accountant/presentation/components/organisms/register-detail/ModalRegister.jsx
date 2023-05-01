@@ -1,34 +1,9 @@
-import { useContext, useState } from 'react'
-import './modalRegister.css'
-import ModalContext from '../../../../../../core/context/ModalContext'
 import Detail from '../../../../infrastructure/models/Details'
-
-
+import useFormDetail from '../../../hooks/useFormDetail'
+import './modalRegister.css'
 
 const RegisterDetail = () => {
-  const { closeModal } = useContext(ModalContext)
-  const [form, setForm] = useState({
-    [Detail.id]: "",
-    [Detail.name]: "",
-    [Detail.detailType]: "0",
-    [Detail.amountOfMoney]: "",
-    [Detail.description]: "",
-  })
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(form);
-    // e.target
-    //   .querySelectorAll(".input")
-    //   .forEach(function ({ name }) {
-    //     console.log(name)
-    //   });
-  }
-
-  const handleChange = (event, key) => {
-    const value = event.target.value
-    setForm({ ...form, [key]: value })
-  }
+  const { form, handleChange, handleSubmit, closeModal } = useFormDetail()
 
   return (
     <form className="container-form" onSubmit={handleSubmit} >
