@@ -20,17 +20,25 @@ class DetailService {
 
     async create(body) {
         try {
-            console.log("detailValidateAdapter: ", detailValidateAdapter(body))
             if (detailValidateAdapter(body)) {
                 new Error(`Error requirements params ${messageRequirements}`)
             }
             const bodyFormater = detailInputAdapter(body)
-            console.log("bodyFormater: ", bodyFormater)
             const result = await instance.post(`/${this.#path}`,
                 bodyFormater)
             return detailOutputAdapter(result.data)
         } catch (error) {
             console.log("DetailService().create()", error);
+        }
+    }
+
+    async deleted(id){
+        console.log("DetailService().deleted()");
+        try {
+            const result = await instance.delete(`/${this.#path}/${id}`)
+            return result.data
+        } catch (error) {
+            console.log("DetailService().deleted()", error);
         }
     }
 
