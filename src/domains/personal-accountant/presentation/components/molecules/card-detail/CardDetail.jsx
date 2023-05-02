@@ -8,9 +8,10 @@ function CardDetail({detail}) {
 
     return (
         <div className='cards__item'>
-           <CardHeader id={detail[Detail.id]} />
+           <CardHeader detail={detail} />
             <div>
                 <h3 className='cards__item-title'>{detail[Detail.name]}
+                    <small>{detail[Detail.amountOfMoney]}</small>
                     <small>{getTypeDetail(detail[Detail.detailType])}</small>
                 </h3>
             </div>
