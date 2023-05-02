@@ -10,7 +10,8 @@ export const initialContext = {
             [ACTIONS_MODALS.register]: false,
             [ACTIONS_MODALS.editer]: false,
         }
-    }
+    },
+    parmas: false
 }
 
 const ModalContext = createContext(initialContext)

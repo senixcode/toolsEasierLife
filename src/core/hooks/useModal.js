@@ -4,7 +4,7 @@ import { ACTIONS_MODALS } from "../const/actionsModal.cons"
 
 function useModal() {
     const [modalState, setModalState] = useState(initialContext)
-    const changeActionsModal = (action) =>
+    const changeActionsModal = (action, params = false) =>
         setModalState({
             open: !modalState.open,
             payload: {
@@ -12,11 +12,12 @@ function useModal() {
                     ...initialContext.payload.actions,
                     [action]: !modalState.payload.actions[action]
                 }
-            }
+            },
+            params
         })
 
     const handleRegisterModal = () => changeActionsModal(ACTIONS_MODALS.register)
-    const handleEditerModal = () => changeActionsModal(ACTIONS_MODALS.editer)
+    const handleEditerModal = (params) => changeActionsModal(ACTIONS_MODALS.editer, params)
     const closeModal = () => setModalState(initialContext)
 
     return {
