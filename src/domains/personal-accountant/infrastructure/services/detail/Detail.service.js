@@ -31,7 +31,7 @@ class DetailService {
             console.log("DetailService().create()", error);
         }
     }
-    
+
     async edited(body) {
         try {
             const { id, ...data } = body
@@ -54,6 +54,17 @@ class DetailService {
             return result.data
         } catch (error) {
             console.log("DetailService().deleted()", error);
+        }
+    }
+
+    async search(name) {
+        try {
+            const result = await instance.post(`/detailSearch`, {
+                search: name
+            })
+            return detailOutputAdapter(result.data)
+        } catch (error) {
+            return error
         }
     }
 
