@@ -17,7 +17,7 @@ function Detail() {
           <CardSkeleton key={index} />
         ))
       ) : (
-        details.map((detail) => (
+        details && details.map((detail) => (
           <CardDetail key={detail.id} detail={detail} />
         ))
       )}
