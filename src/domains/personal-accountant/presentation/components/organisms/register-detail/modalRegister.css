@@ -1,27 +1,29 @@
-.container-form{
+.container-form {
     display: flex;
     flex-direction: column;
     padding: 20px 50px;
-    gap: 1rem;
+    gap: 0.6rem;
 }
+
 .input {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     font-size: 1.3rem;
-  }
-
-label{
-    font-size: 1.5rem;
 }
-.container-btns{
+
+label {
+    font-size: 1.4rem;
+}
+
+.container-btns {
     display: flex;
     column-gap: 15px;
     justify-content: flex-end;
 }
 
-.btn{
+.btn {
     border: none;
     padding: 15px 32px;
     text-align: center;
@@ -29,20 +31,23 @@ label{
     display: inline-block;
     font-size: 16px;
     border-radius: 5px;
-  }
+}
 
-.primary{
- background-color: #008259;
- color: white;
+.primary {
+    background-color: #008259;
+    color: white;
 }
-.secondary{
- background-color: #57bd9e;
- color: white;
+
+.secondary {
+    background-color: #57bd9e;
+    color: white;
 }
-.header-modal{
+
+.header-modal {
     display: flex;
     justify-content: center;
 }
-.header-modal .title{
+
+.header-modal .title {
     font-size: 2rem;
 }
