@@ -9,7 +9,7 @@ function PersonalAccountant() {
 
     return (
         <DetailProvider>
-            <main>
+            <main className='App'>
                 <TemplateSaveDetail />
                 <div className='flex-center'>
                     <h1 className='title'>Personal Accountant</h1>
