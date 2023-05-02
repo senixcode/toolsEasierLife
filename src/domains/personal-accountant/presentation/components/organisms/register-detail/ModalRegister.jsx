@@ -7,19 +7,24 @@ const RegisterDetail = () => {
 
   return (
     <form className="container-form" onSubmit={handleSubmit} >
+      <input type="hidden"
+        defaultValue={form[Detail.id]}
+        name={Detail.id}
+        onChange={(e) => handleChange(e, Detail.id)}
+      />
       <div>
         <label htmlFor="">Name</label>
         <input
           defaultValue={form[Detail.name]}
           name={Detail.name}
-          onChange={(e) => handleChange(e, Detail.name)}
+          onChange={(e) => handleChange(e, Detail.name, 3)}
           className="input"
         />
       </div>
       <div>
-        <label htmlFor="">Detail Type </label>
+        <label htmlFor="">Detail Type</label>
         <select
-          defaultValue={form[Detail.detailType]}
+          value={form[Detail.detailType]}
           name={Detail.detailType}
           onChange={(e) => handleChange(e, Detail.detailType)}
           className="input"
@@ -57,7 +62,7 @@ const RegisterDetail = () => {
           className="input" />
       </div>
       <div className="container-btns">
-        <button onClick={closeModal} className="btn secondary">Cancelar</button>
+        <button type='button' onClick={closeModal} className="btn secondary">Cancelar</button>
         <button type="submit" className="btn primary">Guardar</button>
       </div>
     </form>
