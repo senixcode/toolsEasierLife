@@ -14,11 +14,12 @@ const initialForm = {
 const useFormDetail = () => {
     const [form, setForm] = useState(initialForm)
     const { closeModal } = useContext(ModalContext)
-    const mutation = useDetailsCreate()
+    
+    const createdDetail = useDetailsCreate()
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        mutation.mutate(form)
+        createdDetail(form)
         setForm(initialForm)
         closeModal()
         // e.target
