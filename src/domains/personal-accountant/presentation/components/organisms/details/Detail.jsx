@@ -3,7 +3,7 @@ import CardSkeleton from "../../molecules/card-skeleton/CardSkeleton";
 import { createListMock } from "../../../../../../shared/infrastructure/adapters/createListMock";
 import { useContext } from "react";
 import DetailContext from "../../../context/DetailContext";
-
+import D from "../../../../domain/clases/Details";
 
 function Detail() {
   const { status, details, error, isFetching } = useContext(DetailContext)
@@ -18,7 +18,7 @@ function Detail() {
         ))
       ) : (
         details && details.map((detail) => (
-          <CardDetail key={detail.id} detail={detail} />
+          <CardDetail key={detail[D.id]} detail={detail} />
         ))
       )}
     </section>

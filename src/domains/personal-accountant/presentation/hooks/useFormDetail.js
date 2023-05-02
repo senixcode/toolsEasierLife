@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react"
-import Detail from "../../infrastructure/models/Details"
 import ModalContext from "../../../../core/context/ModalContext"
 import useDetailsCreate from "./services/useDetailCreate"
 import useDetailEdit from "./services/useDetailEdit"
+import Detail from "../../domain/clases/Details"
 
 const initialForm = {
     [Detail.id]: "",

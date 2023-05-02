@@ -1,4 +1,4 @@
-import Detail from "../models/Details"
+import Detail from "../../domain/clases/Details"
 
 function DetailOutput(detail) {
     return {

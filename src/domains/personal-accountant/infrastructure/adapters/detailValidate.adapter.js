@@ -1,5 +1,4 @@
-import Detail from "../models/Details"
-
+import Detail from "../../domain/clases/Details"
 
 const detailValidateAdapter = (body) => {
     if (!body[Detail.name] ||

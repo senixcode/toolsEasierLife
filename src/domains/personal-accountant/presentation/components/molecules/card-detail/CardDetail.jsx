@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
 import CardHeader from '../card-header/CardHeader'
 import { getTypeDetail } from '../../../utils/getTypeDetail'
-import Detail from '../../../../infrastructure/models/Details';
+import Detail from '../../../../domain/clases/Details'
+
 
 
 function CardDetail({detail}) {

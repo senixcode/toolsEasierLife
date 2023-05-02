@@ -4,7 +4,8 @@ import IconCustom from '../../atoms/iconcustom/IconCustom'
 import './cardHeader.css'
 import ModalContext from '../../../../../../core/context/ModalContext'
 import useDetailDelete from '../../../hooks/services/useDetailDelete'
-import Detail from '../../../../infrastructure/models/Details'
+import Detail from '../../../../domain/clases/Details'
+
 
 function CardHeader({detail}) {
     const { handleEditerModal } = useContext(ModalContext)

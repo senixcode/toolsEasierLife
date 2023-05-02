@@ -1,4 +1,5 @@
-import Detail from '../../../../infrastructure/models/Details'
+
+import Detail from '../../../../domain/clases/Details'
 import useFormDetail from '../../../hooks/useFormDetail'
 import './modalRegister.css'
 
