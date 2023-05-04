@@ -1,17 +1,21 @@
 
 // imports pages
-
 import PersonalAccountant from '../../domains/personal-accountant/presentation/pages/PersonalAccountant'
-//imports Libreries
- import Modal from 'react-modal'
+// imports providers
+import ModalProvider from '../providers/ModalProvider'
 //import styles
 import './app.css'
-
- Modal.setAppElement("#root")
-
+import TanstackProvider from '../providers/TanstackProvider'
+//import {} from '@/'
 function App() {
-  
-  return <PersonalAccountant/>
+
+  return (
+    <TanstackProvider>
+      <ModalProvider>
+        <PersonalAccountant />
+      </ModalProvider>
+    </TanstackProvider>
+  )
 }
 
 

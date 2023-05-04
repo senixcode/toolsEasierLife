@@ -1,0 +1,16 @@
+.card__header{
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 0.5rem;
+}
+.btn-icon{
+    width: 42px;
+    cursor: pointer;
+    border: none;
+  
+    background-color: #ffff;
+}
+
+.red {
+    color: #FF6D60;
+}

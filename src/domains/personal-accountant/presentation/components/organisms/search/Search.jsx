@@ -1,13 +1,22 @@
-import CIcon from '@coreui/icons-react';
 import * as icon from '@coreui/icons';
 import "./search.css"
-function Search({handleOpenModal}) {
+import IconCustom from '../../atoms/iconcustom/IconCustom';
+import { useContext } from 'react';
+import ModalContext from '../../../../../../core/context/ModalContext';
+import useDetailSearch from '../../../hooks/services/useDetailSearch';
+function Search() {
+    const { handleRegisterModal } = useContext(ModalContext)
+    const { onChange, searchDetail } = useDetailSearch()
     return (
         <section className='section-header'>
-            <input className='search__input' type="search" name="" placeholder='search by name and detail type' id="" />
-            <button className=' primary button-add' onClick={handleOpenModal} >
-                <CIcon icon={icon.cilPlus} className='icon-add' onClick={handleOpenModal} size="custom-size" />
-            </button>
+            <input 
+                className='search__input'
+                type="search"
+                onChange={onChange}
+                placeholder='search by name'
+                onKeyDown={searchDetail}
+            />
+            <IconCustom btnClass="primary button-add" ciconClass='icon-add' icon={icon.cilPlus} ciconOnclick={handleRegisterModal} />
         </section>
     )
 }
