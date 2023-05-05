@@ -22,7 +22,11 @@
     "baseUrl": ".",
     "types": ["node"],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "assets/*": ["./src/assets/*"],
+      "core/*": ["./src/core/*"],
+      "domains/*": ["./src/domains/*"],
+      "shared/*": ["./src/shared/*"]
     }
   },
   "include": ["src"],
