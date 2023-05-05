@@ -6,7 +6,7 @@ import ModalProvider from '../providers/ModalProvider'
 //import styles
 import './app.css'
 import TanstackProvider from '../providers/TanstackProvider'
-//import {} from '@/'
+
 function App() {
 
   return (

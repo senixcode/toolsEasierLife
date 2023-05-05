@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC, useState } from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
@@ -15,8 +15,13 @@ const ReactQueryDevtoolsProduction = React.lazy(() =>
     ),
 )
 
-function TanstackProvider({ children }) {
-    const [showDevtools, setShowDevtools] = React.useState(false)
+type Props = {
+    children?: React.ReactNode
+}
+
+const TanstackProvider:FC<Props> = ({ children }) => {
+    const [showDevtools, setShowDevtools] = useState<boolean>(false)
+
     React.useEffect(() => {
         // @ts-ignore
         window.toggleDevtools = () => setShowDevtools((old) => !old)

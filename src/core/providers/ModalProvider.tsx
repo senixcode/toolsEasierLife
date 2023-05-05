@@ -1,11 +1,15 @@
-import React from 'react'
+import { FC } from 'react'
 import Modal from 'react-modal'
-import ModalContext from '../context/ModalContext'
-import useModal from '../hooks/useModal'
+import ModalContext from '@/core/context/ModalContext'
+import useModal from '@/core/hooks/useModal'
 
 Modal.setAppElement("#root")
 
-function ModalProvider({ children }) {
+type Props = {
+    children?: React.ReactNode
+}
+
+const ModalProvider:FC<Props> = ({ children }) => {
     const params = useModal()
     return (
         <ModalContext.Provider value={params}>

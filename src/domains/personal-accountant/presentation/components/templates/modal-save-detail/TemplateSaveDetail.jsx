@@ -6,8 +6,8 @@ import ModalContext from '../../../../../../core/context/ModalContext';
 import { ACTIONS_MODALS } from '../../../../../../core/const/actionsModal.cons';
 
 const getTitle = (modalState) => {
-  if (modalState.payload.actions[ACTIONS_MODALS.register]) return "Register"
-  if (modalState.payload.actions[ACTIONS_MODALS.editer]) return "Editer"
+  if (modalState.actions[ACTIONS_MODALS.register]) return "Register"
+  if (modalState.actions[ACTIONS_MODALS.editer]) return "Editer"
 }
 
 function TemplateSaveDetail() {

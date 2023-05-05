@@ -1,3 +1,13 @@
+export type TypeDetail = {
+    id?: string
+    name: string
+    detailTypeId: string
+    amount: string
+    amountOfMoney: string
+    description?: string
+    date?: string
+}
+
 const Detail = {
     id: "id",
     name: "name",
