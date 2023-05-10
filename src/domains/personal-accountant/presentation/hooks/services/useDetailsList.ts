@@ -7,7 +7,7 @@ import { TypeDetailContext } from "../../context/DetailContext"
 function useDetailsList():TypeDetailContext  {
     
     const [details, setDetails] = useState<TypeDetailBody[] | []>([])
-    const { status, data, error, isFetching, refetch } = useQuery({
+    let { status, data, error, isFetching, refetch } = useQuery({
         queryKey: ['detailsList'],
         queryFn: () => new DetailService().list(),
     })
@@ -20,7 +20,6 @@ function useDetailsList():TypeDetailContext  {
     }, [data])
 
     let refresh = (): void | any => refetch()
-
     return { status, details, setDetails, error, isFetching, refresh, resetDetails }
 }
 

@@ -1,1 +1,1 @@
-export const createListMock = (number) => Array.from(new Array(number))
+export const createListMock = (number:number) => Array.from(new Array(number))

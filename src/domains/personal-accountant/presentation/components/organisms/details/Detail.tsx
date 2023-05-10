@@ -1,14 +1,14 @@
-import CardDetail from "../../molecules/card-detail/CardDetail";
-import CardSkeleton from "../../molecules/card-skeleton/CardSkeleton";
-import { createListMock } from "../../../../../../shared/infrastructure/adapters/createListMock";
-import { useContext } from "react";
-import DetailContext from "../../../context/DetailContext";
-import D from "../../../../domain/clases/Details";
+import { useContext } from 'react'
+import CardDetail from 'domains/personal-accountant/presentation/components/molecules/card-detail/CardDetail'
+import CardSkeleton from 'domains/personal-accountant/presentation/components/molecules/card-skeleton/CardSkeleton'
+import { createListMock } from 'shared/infrastructure/adapters/createListMock'
+import DetailContext from 'domains/personal-accountant/presentation/context/DetailContext'
+import D, { TypeDetailBody } from 'domains/personal-accountant/domain/clases/Details'
 
 function Detail() {
-  const { status, details, error, isFetching } = useContext(DetailContext)
+  const { status, details, isFetching } = useContext(DetailContext)
 
-  if (status === 'error') return <span>Error: {error.message}</span>
+  if (status === 'error') return <span>Error 404</span>
 
   return (
     <section className='cards__container'>
@@ -17,8 +17,10 @@ function Detail() {
           <CardSkeleton key={index} />
         ))
       ) : (
-        details && details.map((detail) => (
-          <CardDetail key={detail[D.id]} detail={detail} />
+        details && details.map((detail: TypeDetailBody) => (
+          <CardDetail
+            key={detail[D.id]}
+            detail={detail} />
         ))
       )}
     </section>

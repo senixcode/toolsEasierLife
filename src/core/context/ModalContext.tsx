@@ -1,13 +1,13 @@
 import { createContext } from 'react';
-import { TypeDetail } from 'domains/personal-accountant/domain/clases/Details';
+import { TypeDetailBody } from 'domains/personal-accountant/domain/clases/Details';
 import { ACTIONS_MODALS } from 'core/const/actionsModal.const';
 
-interface Actions {
+export interface Actions {
     register: boolean,
     editer: boolean
 }
 
-export type ParamsModal = boolean | TypeDetail
+export type ParamsModal = boolean | TypeDetailBody
 
 export interface ModalState {
     open: boolean

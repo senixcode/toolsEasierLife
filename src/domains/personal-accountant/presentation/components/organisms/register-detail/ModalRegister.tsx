@@ -1,6 +1,6 @@
 
-import Detail from '../../../../domain/clases/Details'
-import useFormDetail from '../../../hooks/useFormDetail'
+import Detail from 'domains/personal-accountant/domain/clases/Details'
+import useFormDetail from 'domains/personal-accountant/presentation/hooks/useFormDetail'
 import './modalRegister.css'
 
 const RegisterDetail = () => {
@@ -25,9 +25,9 @@ const RegisterDetail = () => {
       <div>
         <label htmlFor="">Detail Type</label>
         <select
-          value={form[Detail.detailType]}
-          name={Detail.detailType}
-          onChange={(e) => handleChange(e, Detail.detailType)}
+          value={form[Detail.detailTypeId]}
+          name={Detail.detailTypeId}
+          onChange={(e) => handleChange(e, Detail.detailTypeId)}
           className="input"
         >
           <option value="0" disabled></option>

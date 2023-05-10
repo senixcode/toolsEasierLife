@@ -3,11 +3,11 @@ import * as icon from '@coreui/icons'
 import IconCustom from 'domains/personal-accountant/presentation/components/atoms/iconcustom/IconCustom'
 import ModalContext, { TypeModalContext } from 'core/context/ModalContext'
 import useDetailDelete from 'domains/personal-accountant/presentation/hooks/services/useDetailDelete'
-import { TypeDetail } from 'domains/personal-accountant/domain/clases/Details'
+import Detail, { TypeDetailBody } from 'domains/personal-accountant/domain/clases/Details'
 import './cardHeader.css'
 
 type PropsCardHeader = {
-    detail: TypeDetail
+    detail: TypeDetailBody
 }
 
 const CardHeader: FC<PropsCardHeader> = ({ detail }) => {
@@ -15,7 +15,7 @@ const CardHeader: FC<PropsCardHeader> = ({ detail }) => {
     const deletedDetail = useDetailDelete()
     
     const handleEdit = () => handleEditerModal(detail)
-    const handleDeleted = () => deletedDetail(detail.id)
+    const handleDeleted = () => detail[Detail.id] && deletedDetail(detail[Detail.id])
 
     return (
         <div className='card__header'>

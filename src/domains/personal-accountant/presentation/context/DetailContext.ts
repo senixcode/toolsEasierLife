@@ -1,5 +1,27 @@
 import { createContext } from "react"
+import { QueryStatus} from "@tanstack/react-query"
+import { TypeDetailBody } from 'domains/personal-accountant/domain/clases/Details';
 
-const DetailContext = createContext(null)
+export type TypeDetailContext = {
+    status: "loading" | "error" | "success";
+    details: [] | TypeDetailBody[];
+    setDetails: React.Dispatch<React.SetStateAction<[] | TypeDetailBody[]>>;
+    error: unknown;
+    isFetching: boolean;
+    refresh: () => void | any;
+    resetDetails: () => void;
+}
+
+const initialDetailContext = {
+    status: "loading" as QueryStatus,
+    details: [],
+    setDetails: () => {},
+    error: null,
+    isFetching: false,
+    refresh: () => {},
+    resetDetails: () => {},
+}
+
+const DetailContext = createContext<TypeDetailContext>(initialDetailContext)
 
 export default DetailContext

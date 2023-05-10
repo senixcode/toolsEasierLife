@@ -1,10 +1,14 @@
-import React from 'react'
-import DetailContext from '../context/DetailContext'
-import useDetailsList from '../hooks/services/useDetailsList'
+import React, { FC } from 'react'
+import DetailContext from 'domains/personal-accountant/presentation/context/DetailContext'
+import useDetailsList from 'domains/personal-accountant/presentation/hooks/services/useDetailsList'
+import { TypeDetailContext } from 'domains/personal-accountant/presentation/context/DetailContext'
 
-function DetailProvider({ children }) {
-    const detailList = useDetailsList()
-    
+type PropsDetailProvider = {
+    children?: React.ReactNode
+}
+const DetailProvider: FC<PropsDetailProvider> = ({ children }) => {
+    const detailList:TypeDetailContext = useDetailsList()
+
     return (
         <DetailContext.Provider value={detailList}>
             {children}
