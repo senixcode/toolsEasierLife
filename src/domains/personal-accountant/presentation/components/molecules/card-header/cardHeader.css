@@ -7,10 +7,14 @@
     width: 42px;
     cursor: pointer;
     border: none;
+<<<<<<< HEAD
   
     background-color: #ffff;
 }
 
 .red {
     color: #FF6D60;
+=======
+    background-color: #ffff;
+>>>>>>> 9f84aaf35fea8d44e213c43b4b77bf5eb7362cef
 }
