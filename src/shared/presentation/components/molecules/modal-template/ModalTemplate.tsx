@@ -1,10 +1,13 @@
+import { FC } from 'react'
 import Modal from "react-modal";
 import "./modal.css";
 import { useContext } from "react";
 import ModalContext from "../../../../../core/context/ModalContext";
 
-
-const ModalTemplate = ({
+type PropsModalTemplate = {
+  children?: React.ReactNode
+}
+const ModalTemplate: FC<PropsModalTemplate> = ({
   children,
 }) => {
 

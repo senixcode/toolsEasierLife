@@ -1,6 +1,9 @@
-import React from 'react'
+import {FC} from 'react'
 
-function HeaderModal({ title }) {
+type PropsHeaderModal = {
+    title: string
+}
+const HeaderModal:FC<PropsHeaderModal> = ({ title }) => {
     return (
         <div className="header-modal">
             <h2 className="title">{title}</h2>
