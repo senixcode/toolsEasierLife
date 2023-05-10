@@ -1,22 +1,14 @@
-import { useState } from "react"
-import ModalContext, { ParamsModal, initialContext } from "@/core/context/ModalContext"
-import { ACTIONS_MODALS } from '@/core/const/actionsModal.const'
-
-export type PropsUseModal = {
-    modalState: ModalContext;
-    changeActionsModal: (action: ACTIONS_MODALS, params: ParamsModal) => void;
-    handleRegisterModal: () => void;
-    handleEditerModal: (params: ParamsModal) => void;
-    closeModal: () => void;
-}
+import { useState } from 'react'
+import { ParamsModal, initialModalState } from 'core/context/ModalContext'
+import { ACTIONS_MODALS } from 'core/const/actionsModal.const'
 
 const useModal = () => {
-    const [modalState, setModalState] = useState<ModalContext>(initialContext)
+    const [modalState, setModalState] = useState(initialModalState)
     const changeActionsModal = (action: ACTIONS_MODALS, params: ParamsModal = false) =>
         setModalState({
             open: !modalState.open,
             actions: {
-                ...initialContext.actions,
+                ...initialModalState.actions,
                 [action]: !modalState.actions[action]
             },
             params,
@@ -24,7 +16,7 @@ const useModal = () => {
 
     const handleRegisterModal = () => changeActionsModal(ACTIONS_MODALS.register)
     const handleEditerModal = (params:ParamsModal) => changeActionsModal(ACTIONS_MODALS.editer, params)
-    const closeModal = () => setModalState(initialContext)
+    const closeModal = () => setModalState(initialModalState)
 
     return {
         modalState,

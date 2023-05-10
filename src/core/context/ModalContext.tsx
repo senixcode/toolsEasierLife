@@ -1,21 +1,30 @@
-import { createContext } from "react";
-import { TypeDetail } from "@/domains/personal-accountant/domain/clases/Details";
-import { PropsUseModal } from "@/core/hooks/useModal";
+import { createContext } from 'react';
+import { TypeDetail } from 'domains/personal-accountant/domain/clases/Details';
+import { ACTIONS_MODALS } from 'core/const/actionsModal.const';
 
 interface Actions {
     register: boolean,
     editer: boolean
 }
 
-export type ParamsModal =  boolean | TypeDetail
+export type ParamsModal = boolean | TypeDetail
 
-interface ModalContext {
+export interface ModalState {
     open: boolean
     actions: Actions
     params: ParamsModal
 }
 
-export const initialContext: ModalContext = {
+export type TypeModalContext = {
+    modalState: ModalState;
+    changeActionsModal: (action: ACTIONS_MODALS, params: ParamsModal) => void;
+    handleRegisterModal: () => void;
+    handleEditerModal: (params: ParamsModal) => void;
+    closeModal: () => void;
+}
+
+
+export const initialModalState: ModalState = {
     open: false,
     actions: {
         register: false,
@@ -24,6 +33,13 @@ export const initialContext: ModalContext = {
     params: false
 }
 
-const ModalContext = createContext<ModalContext | PropsUseModal>(initialContext)
+export const initialModalContext: TypeModalContext = {
+    modalState: initialModalState,
+    changeActionsModal: () => null,
+    handleRegisterModal: () => null,
+    handleEditerModal: () => null,
+    closeModal: () => null,
+}
 
-export default ModalContext
+const modalContext = createContext(initialModalContext)
+export default modalContext

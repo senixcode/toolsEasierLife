@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import Modal from 'react-modal'
-import ModalContext from '@/core/context/ModalContext'
-import useModal from '@/core/hooks/useModal'
+import ModalContext from 'core/context/ModalContext'
+import useModal from 'core/hooks/useModal'
 
 Modal.setAppElement("#root")
 
