@@ -1,6 +1,6 @@
 import { useMutation } from "@tanstack/react-query"
 import DetailService from "../../../infrastructure/services/detail/detail.services"
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import DetailContext from "../../context/DetailContext"
 
 const useDetailSearch = () => {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import { useQuery, QueryStatus } from "@tanstack/react-query"
+import { useQuery } from "@tanstack/react-query"
 import DetailService from "domains/personal-accountant/infrastructure/services/detail/detail.services"
-import { TypeDetail, TypeDetailBody } from "@/domains/personal-accountant/domain/clases/Details"
+import {TypeDetailBody } from "@/domains/personal-accountant/domain/clases/Details"
 import { TypeDetailContext } from "../../context/DetailContext"
 
 function useDetailsList():TypeDetailContext  {
