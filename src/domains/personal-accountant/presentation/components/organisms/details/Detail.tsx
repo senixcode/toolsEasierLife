@@ -4,12 +4,11 @@ import CardSkeleton from 'domains/personal-accountant/presentation/components/mo
 import { createListMock } from 'shared/infrastructure/adapters/createListMock'
 import DetailContext from 'domains/personal-accountant/presentation/context/DetailContext'
 import D, { TypeDetailBody } from 'domains/personal-accountant/domain/clases/Details'
+import DetailsMock from './DetailMock'
 
 function Detail() {
   const { status, details, isFetching } = useContext(DetailContext)
-
-  if (status === 'error') return <span>Error 404</span>
-
+  if (status === 'error') return (<DetailsMock />)
   return (
     <section className='cards__container'>
       {status === 'loading' || isFetching ? (

@@ -4,10 +4,13 @@ import IconCustom from 'domains/personal-accountant/presentation/components/atom
 import ModalContext from 'core/context/ModalContext'
 import useDetailSearch from 'domains/personal-accountant/presentation/hooks/services/useDetailSearch'
 import './search.css'
+import DetailContext from '../../../context/DetailContext'
 
 function Search() {
     const { handleRegisterModal } = useContext(ModalContext)
     const { onChange, searchDetail } = useDetailSearch()
+    const { status } = useContext(DetailContext)
+    if(status === 'error') return (<></>)
     return (
         <section className='section-header'>
             <input
@@ -17,11 +20,11 @@ function Search() {
                 placeholder='search by name'
                 onKeyDown={searchDetail}
             />
-            <IconCustom
-                btnClass='primary button-add'
-                ciconClass='icon-add'
-                icon={icon.cilPlus}
-                ciconOnclick={handleRegisterModal} />
+            <IconCustom 
+            btnClass='primary button-add' 
+            ciconClass='icon-add' 
+            icon={icon.cilPlus} 
+            ciconOnclick={handleRegisterModal} />
         </section>
     )
 }

@@ -1,10 +1,10 @@
+
 import Search from '../components/organisms/search/Search';
 import TemplateSaveDetail from '../components/templates/modal-save-detail/TemplateSaveDetail';
 import Detail from '../components/organisms/details/Detail';
 import DetailProvider from '../providers/DetailProvider';
 
 function PersonalAccountant() {
-    
 
     return (
         <DetailProvider>

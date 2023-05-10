@@ -1,17 +1,18 @@
-import { FC } from 'react'
+import { FC, useContext } from 'react'
 import CardHeader from 'domains/personal-accountant/presentation/components/molecules/card-header/CardHeader'
 import { getTypeDetail } from 'domains/personal-accountant/presentation/utils/getTypeDetail'
 import Detail, { TypeDetailBody } from 'domains/personal-accountant/domain/clases/Details'
+import DetailContext from 'domains/personal-accountant/presentation/context/DetailContext'
 
 type PropsCardDetail = {
     detail: TypeDetailBody
 }
 
 const CardDetail: FC<PropsCardDetail> = ({ detail }) => {
-
+    const { status } = useContext(DetailContext)
     return (
         <div className='cards__item'>
-            <CardHeader detail={detail} />
+            {status !== 'error' && <CardHeader detail={detail} />}
             <div>
                 <h3 className='cards__item-title'>{detail[Detail.name]}
                     <small>{detail[Detail.amountOfMoney]}</small>
