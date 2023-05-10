@@ -1,7 +1,8 @@
+import { ENV } from '@/config/env';
 import axios from 'axios'
 
 const instance = axios.create({
-    baseURL: 'http://localhost:3000/',
+    baseURL: ENV.baseURL,
     timeout: 3000,
     headers: { 'Accept-Language': 'application/json' }
 })
