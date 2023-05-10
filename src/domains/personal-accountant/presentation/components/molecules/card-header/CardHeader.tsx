@@ -1,27 +1,32 @@
-import React, { useContext } from 'react'
+import { useContext, FC } from 'react'
 import * as icon from '@coreui/icons'
-import IconCustom from '../../atoms/iconcustom/IconCustom'
+import IconCustom from 'domains/personal-accountant/presentation/components/atoms/iconcustom/IconCustom'
+import ModalContext, { TypeModalContext } from 'core/context/ModalContext'
+import useDetailDelete from 'domains/personal-accountant/presentation/hooks/services/useDetailDelete'
+import { TypeDetail } from 'domains/personal-accountant/domain/clases/Details'
 import './cardHeader.css'
-import ModalContext from '../../../../../../core/context/ModalContext'
-import useDetailDelete from '../../../hooks/services/useDetailDelete'
-import Detail from '../../../../domain/clases/Details'
 
+type PropsCardHeader = {
+    detail: TypeDetail
+}
 
-function CardHeader({detail}) {
-    const { handleEditerModal } = useContext(ModalContext)
+const CardHeader: FC<PropsCardHeader> = ({ detail }) => {
+    const { handleEditerModal } = useContext<TypeModalContext>(ModalContext)
     const deletedDetail = useDetailDelete()
     
+    const handleEdit = () => handleEditerModal(detail)
+    const handleDeleted = () => deletedDetail(detail.id)
+
     return (
         <div className='card__header'>
             <IconCustom
                 btnClass="btn-icon"
-                ciconOnclick={() => handleEditerModal(detail)}
+                ciconOnclick={handleEdit}
                 icon={icon.cilPencil}
             />
             <IconCustom
                 btnClass="btn-icon red"
-                ciconClass=""
-                ciconOnclick={() => deletedDetail(detail[Detail.id])}
+                ciconOnclick={handleDeleted}
                 icon={icon.cilCut}
             />
         </div>
