@@ -1,20 +1,25 @@
 import { useEffect, useState } from "react"
-import { useQuery } from "@tanstack/react-query"
-import DetailService from "../../../infrastructure/services/detail/Detail.service"
+import { useQuery, QueryStatus } from "@tanstack/react-query"
+import DetailService from "domains/personal-accountant/infrastructure/services/detail/detail.services"
+import { TypeDetail, TypeDetailBody } from "@/domains/personal-accountant/domain/clases/Details"
+import { TypeDetailContext } from "../../context/DetailContext"
 
-function useDetailsList() {
-    const [details, setDetails] = useState([])
+function useDetailsList():TypeDetailContext  {
+    
+    const [details, setDetails] = useState<TypeDetailBody[] | []>([])
     const { status, data, error, isFetching, refetch } = useQuery({
         queryKey: ['detailsList'],
         queryFn: () => new DetailService().list(),
     })
-    const resetDetails = () => setDetails(data)
+    const resetDetails = () => {
+        if (Array.isArray(data)) setDetails(data)
+    }
 
     useEffect(() => {
         resetDetails()
     }, [data])
 
-    const refresh = () => setTimeout(function () { refetch() }, 1000)
+    let refresh = (): void | any => refetch()
 
     return { status, details, setDetails, error, isFetching, refresh, resetDetails }
 }
