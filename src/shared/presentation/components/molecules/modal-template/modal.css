@@ -5,7 +5,7 @@
   margin: auto;
   padding: 0;
   border: 1px solid #888;
-  width: 55%;
+  width: 97%;
   opacity: 0;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -41,3 +41,8 @@
   opacity: 0;
 }
 
+@media only screen and (min-width: 700px) {
+  .modal-base {
+    width: 55%;
+  }
+}
