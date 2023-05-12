@@ -6,25 +6,28 @@ import useDetailSearch from 'domains/personal-accountant/presentation/hooks/serv
 import './search.css'
 import DetailContext from '../../../context/DetailContext'
 
+const title = "Busqueda por nombre"
+
 function Search() {
     const { handleRegisterModal } = useContext(ModalContext)
     const { onChange, searchDetail } = useDetailSearch()
     const { status } = useContext(DetailContext)
-    if(status === 'error') return (<></>)
+    if (status === 'error') return (<></>)
+
     return (
         <section className='section-header'>
             <input
                 className='search__input'
                 type='search'
                 onChange={onChange}
-                placeholder='search by name'
+                placeholder={title}
                 onKeyDown={searchDetail}
             />
-            <IconCustom 
-            btnClass='primary button-add' 
-            ciconClass='icon-add' 
-            icon={icon.cilPlus} 
-            ciconOnclick={handleRegisterModal} />
+            <IconCustom
+                btnClass='primary button-add'
+                ciconClass='icon-add'
+                icon={icon.cilPlus}
+                ciconOnclick={handleRegisterModal} />
         </section>
     )
 }

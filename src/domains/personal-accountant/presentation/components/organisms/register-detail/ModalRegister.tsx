@@ -1,7 +1,16 @@
 
 import Detail from 'domains/personal-accountant/domain/clases/Details'
 import useFormDetail from 'domains/personal-accountant/presentation/hooks/useFormDetail'
+import { getTypeDetail } from 'domains/personal-accountant/presentation/utils/getTypeDetail'
 import './modalRegister.css'
+
+const titles = {
+ [Detail.name]: 'Nombre',
+ [Detail.detailTypeId]: 'Tipo',
+ [Detail.amount]: 'Cantidad',
+ [Detail.amountOfMoney]: 'Costo',
+ [Detail.description]: 'Descripción'
+}
 
 const RegisterDetail = () => {
   const { form, handleChange, handleSubmit, closeModal } = useFormDetail()
@@ -14,16 +23,16 @@ const RegisterDetail = () => {
         onChange={(e) => handleChange(e, Detail.id)}
       />
       <div>
-        <label htmlFor="">Name</label>
+        <label htmlFor="">{titles[Detail.name]}</label>
         <input
-          defaultValue={form[Detail.name]}
+          value={form[Detail.name]}
           name={Detail.name}
           onChange={(e) => handleChange(e, Detail.name, 3)}
           className="input"
         />
       </div>
       <div>
-        <label htmlFor="">Detail Type</label>
+        <label htmlFor="">{titles[Detail.detailTypeId]}</label>
         <select
           value={form[Detail.detailTypeId]}
           name={Detail.detailTypeId}
@@ -31,30 +40,35 @@ const RegisterDetail = () => {
           className="input"
         >
           <option value="0" disabled></option>
-          <option value="1" >INCOME</option>
-          <option value="2" >EGRESS</option>
+          {[1, 2].map(value => (
+            <option 
+            key={value}
+            value={value} >
+              {getTypeDetail(value)}
+              </option>
+          ))}
         </select>
       </div>
       <div>
-        <label htmlFor="">Amount</label>
+        <label htmlFor="">{titles[Detail.amount]}</label>
         <input
-          defaultValue={form[Detail.amount]}
+          value={form[Detail.amount]}
           name={Detail.amount}
           onChange={(e) => handleChange(e, Detail.amount)}
           className="input"
         />
       </div>
       <div>
-        <label htmlFor="">Amount of money</label>
+        <label htmlFor="">{titles[Detail.amountOfMoney]}</label>
         <input
-          defaultValue={form[Detail.amountOfMoney]}
+          value={form[Detail.amountOfMoney]}
           name={Detail.amountOfMoney}
           onChange={(e) => handleChange(e, Detail.amountOfMoney)}
           className="input"
         />
       </div>
       <div>
-        <label htmlFor="">Description</label>
+        <label htmlFor="">{titles[Detail.description]}</label>
         <textarea
           defaultValue={form[Detail.description]}
           name={Detail.description}

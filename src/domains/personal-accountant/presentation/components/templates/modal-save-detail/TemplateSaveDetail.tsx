@@ -6,8 +6,8 @@ import ModalContext, { Actions } from 'core/context/ModalContext';
 import { ACTIONS_MODALS } from 'core/const/actionsModal.const';
 
 const getTitle = (actions:Actions) => {
-  if (actions[ACTIONS_MODALS.register]) return "Register"
-  if (actions[ACTIONS_MODALS.editer]) return "Editer"
+  if (actions[ACTIONS_MODALS.register]) return "Registrar"
+  if (actions[ACTIONS_MODALS.editer]) return "Editar"
 }
 
 function TemplateSaveDetail() {
@@ -15,7 +15,7 @@ function TemplateSaveDetail() {
 
   return (
     <ModalTemplate>
-      <HeaderModal title={`${getTitle(modalState.actions)} Detail`} />
+      <HeaderModal title={`${getTitle(modalState.actions)}`} />
       <RegisterDetail />
     </ModalTemplate>
   )
