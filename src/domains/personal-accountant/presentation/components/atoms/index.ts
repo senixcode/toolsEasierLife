@@ -1,0 +1,1 @@
+export * as IconCustom from './iconcustom/IconCustom'

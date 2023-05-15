@@ -1,0 +1,1 @@
+export * as DetailService from './detail/detail.services'
