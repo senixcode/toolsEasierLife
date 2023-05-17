@@ -5,11 +5,12 @@ import { getTypeDetail } from 'domains/personal-accountant/presentation/utils/ge
 import './modalRegister.css'
 
 const titles = {
- [Detail.name]: 'Nombre',
- [Detail.detailTypeId]: 'Tipo',
- [Detail.amount]: 'Cantidad',
- [Detail.amountOfMoney]: 'Costo',
- [Detail.description]: 'Descripción'
+  [Detail.name]: 'Nombre',
+  [Detail.detailTypeId]: 'Tipo',
+  [Detail.amount]: 'Cantidad',
+  [Detail.amountOfMoney]: 'Costo',
+  [Detail.date]: 'Fecha',
+  [Detail.description]: 'Descripción',
 }
 
 const RegisterDetail = () => {
@@ -41,11 +42,11 @@ const RegisterDetail = () => {
         >
           <option value="0" disabled></option>
           {[1, 2].map(value => (
-            <option 
-            key={value}
-            value={value} >
+            <option
+              key={value}
+              value={value} >
               {getTypeDetail(value)}
-              </option>
+            </option>
           ))}
         </select>
       </div>
@@ -64,6 +65,15 @@ const RegisterDetail = () => {
           value={form[Detail.amountOfMoney]}
           name={Detail.amountOfMoney}
           onChange={(e) => handleChange(e, Detail.amountOfMoney)}
+          className="input"
+        />
+      </div>
+      <div>
+        <label htmlFor="">{titles[Detail.date]}</label>
+        <input
+          type="date"
+          name={Detail.date}
+          onChange={(e) => handleChange(e, Detail.date)}
           className="input"
         />
       </div>
