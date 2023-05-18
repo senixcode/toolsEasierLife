@@ -1,4 +1,5 @@
 import Detail, { TypeDetail, TypeDetailBody } from 'domains/personal-accountant/domain/clases/Details'
+import { formatDate } from './formatDate'
 
 const DetailInput = (detail: TypeDetailBody): TypeDetail => {
     const result: TypeDetail = {
@@ -10,8 +11,9 @@ const DetailInput = (detail: TypeDetailBody): TypeDetail => {
 
     if (detail[Detail.id]) result[Detail.id] = +detail[Detail.id]
     if (detail[Detail.description]) result[Detail.description] = detail[Detail.description]
-    if (detail[Detail.date]) result[Detail.date] = detail[Detail.date]
-
+    if (detail[Detail.date]) result[Detail.date] = formatDate(detail[Detail.date])
+    if (detail[Detail.detailType]) result[Detail.detailType] = detail[Detail.detailType]
+    
     return result
 }
 

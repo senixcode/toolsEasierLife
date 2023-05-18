@@ -15,6 +15,7 @@ const titles = {
 
 const RegisterDetail = () => {
   const { form, handleChange, handleSubmit, closeModal } = useFormDetail()
+console.log("form", form);
 
   return (
     <form className="container-form" onSubmit={handleSubmit} >
@@ -28,7 +29,7 @@ const RegisterDetail = () => {
         <input
           value={form[Detail.name]}
           name={Detail.name}
-          onChange={(e) => handleChange(e, Detail.name, 3)}
+          onChange={(e) => handleChange(e, Detail.name)}
           className="input"
         />
       </div>
@@ -72,6 +73,7 @@ const RegisterDetail = () => {
         <label htmlFor="">{titles[Detail.date]}</label>
         <input
           type="date"
+          value={form[Detail.date]}
           name={Detail.date}
           onChange={(e) => handleChange(e, Detail.date)}
           className="input"

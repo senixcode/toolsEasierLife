@@ -11,6 +11,7 @@ function DetailOutput(detail: TypeDetail) {
     if (detail[Detail.id]) result[Detail.id] = `${detail[Detail.id]}`
     if (detail[Detail.description]) result[Detail.description] = detail[Detail.description]
     if (detail[Detail.date]) result[Detail.date] = detail[Detail.date]
+    if (detail[Detail.detailType]) result[Detail.detailType] = detail[Detail.detailType]
 
     return result
 }
