@@ -59,6 +59,11 @@
   word-break: break-all;
 }
 
+.cards__item .cards__item-date {
+  font-size: 1.15rem;
+  color: #566573;
+}
+
 @media only screen and (min-width: 700px) {
 
   .App {

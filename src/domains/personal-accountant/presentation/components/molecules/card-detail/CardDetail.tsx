@@ -20,7 +20,7 @@ const CardDetail: FC<PropsCardDetail> = ({ detail }) => {
                 </h3>
             </div>
             <p>{detail[Detail.description]}</p>
-            <p>{detail[Detail.date]}</p>
+            <p className='cards__item-date'>{detail[Detail.date]}</p>
         </div>
     )
 }
