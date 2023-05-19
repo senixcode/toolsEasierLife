@@ -19,7 +19,8 @@ const CardDetail: FC<PropsCardDetail> = ({ detail }) => {
                     <small>{getTypeDetail(+detail[Detail.detailTypeId])}</small>
                 </h3>
             </div>
-            <p>{detail.description}</p>
+            <p>{detail[Detail.description]}</p>
+            <p>{detail[Detail.date]}</p>
         </div>
     )
 }
