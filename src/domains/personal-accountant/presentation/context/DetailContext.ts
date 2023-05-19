@@ -10,6 +10,7 @@ export type TypeDetailContext = {
     isFetching: boolean;
     refresh: () => void | any;
     resetDetails: () => void;
+    exportDetails: () => void
 }
 
 const initialDetailContext = {
@@ -20,6 +21,7 @@ const initialDetailContext = {
     isFetching: false,
     refresh: () => {},
     resetDetails: () => {},
+    exportDetails: () => {}
 }
 
 const DetailContext = createContext<TypeDetailContext>(initialDetailContext)

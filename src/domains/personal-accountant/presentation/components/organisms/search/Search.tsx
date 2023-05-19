@@ -12,6 +12,7 @@ function Search() {
     const { handleRegisterModal } = useContext(ModalContext)
     const { onChange, searchDetail } = useDetailSearch()
     const { status } = useContext(DetailContext)
+    const { exportDetails } = useContext(DetailContext)
     if (status === 'error') return (<></>)
 
     return (
@@ -24,10 +25,19 @@ function Search() {
                 onKeyDown={searchDetail}
             />
             <IconCustom
-                btnClass='primary button-add'
+                btnClass='tooltip primary button-add'
                 ciconClass='icon-add'
                 icon={icon.cilPlus}
-                ciconOnclick={handleRegisterModal} />
+                ciconOnclick={handleRegisterModal} >
+                    <span className="tooltiptext">Agregar data</span>
+                </IconCustom>
+
+            <IconCustom
+                btnClass='tooltip button-add'
+                icon={icon.cilCloudDownload}
+                ciconOnclick={exportDetails} >
+                    <span className="tooltiptext">descargar data</span>
+                </IconCustom>
         </section>
     )
 }

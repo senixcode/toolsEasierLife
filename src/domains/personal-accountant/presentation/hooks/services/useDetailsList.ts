@@ -15,12 +15,23 @@ function useDetailsList():TypeDetailContext  {
         if (Array.isArray(data)) setDetails(data)
     }
 
+    const exportDetails = () => {
+        const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(
+          JSON.stringify(details)
+        )}`;
+        const link = document.createElement("a");
+        link.href = jsonString;
+        link.download = `export-${Date.now()}.json`;
+    
+        link.click();
+      };
+
     useEffect(() => {
         resetDetails()
     }, [data])
 
     let refresh = (): void | any => refetch()
-    return { status, details, setDetails, error, isFetching, refresh, resetDetails }
+    return { status, details, setDetails, error, isFetching, refresh, resetDetails, exportDetails }
 }
 
 export default useDetailsList
