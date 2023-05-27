@@ -1,5 +1,5 @@
 
-export enum ACTIONS_MODALS {
+export enum ACTIONS_REGISTER_MODALS {
     register = "register",
     editer = "editer"
 }

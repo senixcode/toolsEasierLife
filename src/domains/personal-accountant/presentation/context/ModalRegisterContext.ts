@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 import { TypeDetailBody } from 'domains/personal-accountant/domain/clases/Details';
-import { ACTIONS_MODALS } from 'core/const/actionsModal.const';
+import { ACTIONS_REGISTER_MODALS } from '@/domains/personal-accountant/presentation/conts/actionsRegisterModal.const';
 
 export interface Actions {
     register: boolean,
@@ -17,7 +17,7 @@ export interface ModalState {
 
 export type TypeModalContext = {
     modalState: ModalState;
-    changeActionsModal: (action: ACTIONS_MODALS, params: ParamsModal) => void;
+    changeActionsModal: (action: ACTIONS_REGISTER_MODALS, params: ParamsModal) => void;
     handleRegisterModal: () => void;
     handleEditerModal: (params: ParamsModal) => void;
     closeModal: () => void;
@@ -41,5 +41,5 @@ export const initialModalContext: TypeModalContext = {
     closeModal: () => null,
 }
 
-const modalContext = createContext(initialModalContext)
-export default modalContext
+const modalRegisterContext = createContext(initialModalContext)
+export default modalRegisterContext

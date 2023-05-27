@@ -1,9 +1,10 @@
 import { useContext, FC } from 'react'
 import * as icon from '@coreui/icons'
 import IconCustom from 'domains/personal-accountant/presentation/components/atoms/iconcustom/IconCustom'
-import ModalContext, { TypeModalContext } from 'core/context/ModalContext'
+import ModalContext, { TypeModalContext } from '@/domains/personal-accountant/presentation/context/ModalRegisterContext'
 import useDetailDelete from 'domains/personal-accountant/presentation/hooks/services/useDetailDelete'
 import Detail, { TypeDetailBody } from 'domains/personal-accountant/domain/clases/Details'
+import modalAlertDeleteContext from 'domains/personal-accountant/presentation/context/ModalAlertDeleteContext'
 import './cardHeader.css'
 
 type PropsCardHeader = {
@@ -12,10 +13,14 @@ type PropsCardHeader = {
 
 const CardHeader: FC<PropsCardHeader> = ({ detail }) => {
     const { handleEditerModal } = useContext<TypeModalContext>(ModalContext)
-    const deletedDetail = useDetailDelete()
+    const { handleChangeIsShow, changeDetail } = useContext(modalAlertDeleteContext)
+    // const deletedDetail = useDetailDelete()
     
     const handleEdit = () => handleEditerModal(detail)
-    const handleDeleted = () => detail[Detail.id] && deletedDetail(detail[Detail.id])
+   const handleDeleted = () => {
+    handleChangeIsShow()
+    changeDetail(detail)
+   }
 
     return (
         <div className='card__header'>

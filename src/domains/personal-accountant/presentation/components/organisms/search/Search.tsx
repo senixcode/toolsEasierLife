@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import * as icon from '@coreui/icons'
 import IconCustom from 'domains/personal-accountant/presentation/components/atoms/iconcustom/IconCustom'
-import ModalContext from 'core/context/ModalContext'
+import ModalContext from '@/domains/personal-accountant/presentation/context/ModalRegisterContext'
 import useDetailSearch from 'domains/personal-accountant/presentation/hooks/services/useDetailSearch'
 import './search.css'
 import DetailContext from '../../../context/DetailContext'

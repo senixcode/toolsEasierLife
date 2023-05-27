@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
-import ModalContext from 'core/context/ModalContext'
+import ModalContext from '@/domains/personal-accountant/presentation/context/ModalRegisterContext'
 import useDetailsCreate from "./services/useDetailCreate"
 import useDetailEdit from 'domains/personal-accountant/presentation/hooks/services/useDetailEdit'
 import Detail, { TypeDetailBody } from 'domains/personal-accountant/domain/clases/Details'
