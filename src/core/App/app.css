@@ -28,7 +28,7 @@
 
 .cards__container {
   display: flex;
-  margin-top: 2rem;
+  margin-top: 1rem;
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
@@ -95,7 +95,7 @@
   }
 
   .cards__container {
-    margin-top: 4rem;
+    margin-top: 2rem;
     gap: 2rem;
   }
   .section-header {

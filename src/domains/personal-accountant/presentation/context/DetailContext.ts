@@ -1,5 +1,5 @@
 import { createContext } from "react"
-import { QueryStatus} from "@tanstack/react-query"
+import { QueryStatus } from "@tanstack/react-query"
 import { TypeDetailBody } from 'domains/personal-accountant/domain/clases/Details';
 
 export type TypeDetailContext = {
@@ -11,17 +11,21 @@ export type TypeDetailContext = {
     refresh: () => void | any;
     resetDetails: () => void;
     exportDetails: () => void;
+    totalIncome: number
+    totalEgress: number
 }
 
 const initialDetailContext = {
     status: "loading" as QueryStatus,
     details: [],
-    setDetails: () => {},
+    setDetails: () => { },
     error: null,
     isFetching: false,
-    refresh: () => {},
-    resetDetails: () => {},
-    exportDetails: () => {},
+    refresh: () => { },
+    resetDetails: () => { },
+    exportDetails: () => { },
+    totalIncome: 0,
+    totalEgress: 0
 }
 
 const DetailContext = createContext<TypeDetailContext>(initialDetailContext)

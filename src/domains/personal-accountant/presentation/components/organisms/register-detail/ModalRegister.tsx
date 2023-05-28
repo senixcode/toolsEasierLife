@@ -1,7 +1,7 @@
 
 import Detail from 'domains/personal-accountant/domain/clases/Details'
 import useFormDetail from 'domains/personal-accountant/presentation/hooks/useFormDetail'
-import { getTypeDetail } from 'domains/personal-accountant/presentation/utils/getTypeDetail'
+import { OptionsTypeDetail, getTypeDetail } from 'domains/personal-accountant/presentation/utils/getTypeDetail'
 import './modalRegister.css'
 
 const titles = {
@@ -15,20 +15,19 @@ const titles = {
 
 const RegisterDetail = () => {
   const { form, handleChange, handleSubmit, closeModal } = useFormDetail()
-console.log("form", form);
 
   return (
     <form className="container-form" onSubmit={handleSubmit} >
       <input type="hidden"
         defaultValue={form[Detail.id]}
-        name={Detail.id}
+        name={Detail[Detail.id]}
         onChange={(e) => handleChange(e, Detail.id)}
       />
       <div>
         <label htmlFor="">{titles[Detail.name]}</label>
         <input
           value={form[Detail.name]}
-          name={Detail.name}
+          name={Detail[Detail.name]}
           onChange={(e) => handleChange(e, Detail.name)}
           className="input"
         />
@@ -37,7 +36,7 @@ console.log("form", form);
         <label htmlFor="">{titles[Detail.detailTypeId]}</label>
         <select
           value={form[Detail.detailTypeId]}
-          name={Detail.detailTypeId}
+          name={Detail[Detail.detailTypeId]}
           onChange={(e) => handleChange(e, Detail.detailTypeId)}
           className="input"
         >
@@ -46,7 +45,7 @@ console.log("form", form);
             <option
               key={value}
               value={value} >
-              {getTypeDetail(value)}
+              {getTypeDetail(value as OptionsTypeDetail )}
             </option>
           ))}
         </select>
@@ -55,7 +54,7 @@ console.log("form", form);
         <label htmlFor="">{titles[Detail.amount]}</label>
         <input
           value={form[Detail.amount]}
-          name={Detail.amount}
+          name={Detail[Detail.amount]}
           onChange={(e) => handleChange(e, Detail.amount)}
           className="input"
         />
@@ -64,7 +63,7 @@ console.log("form", form);
         <label htmlFor="">{titles[Detail.amountOfMoney]}</label>
         <input
           value={form[Detail.amountOfMoney]}
-          name={Detail.amountOfMoney}
+          name={Detail[Detail.amountOfMoney]}
           onChange={(e) => handleChange(e, Detail.amountOfMoney)}
           className="input"
         />
@@ -74,7 +73,7 @@ console.log("form", form);
         <input
           type="date"
           value={form[Detail.date]}
-          name={Detail.date}
+          name={Detail[Detail.date]}
           onChange={(e) => handleChange(e, Detail.date)}
           className="input"
         />
@@ -83,7 +82,7 @@ console.log("form", form);
         <label htmlFor="">{titles[Detail.description]}</label>
         <textarea
           defaultValue={form[Detail.description]}
-          name={Detail.description}
+          name={Detail[Detail.description]}
           onChange={(e) => handleChange(e, Detail.description)}
           rows={3}
           className="input" />

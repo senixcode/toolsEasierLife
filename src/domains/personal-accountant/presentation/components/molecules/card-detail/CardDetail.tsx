@@ -1,6 +1,6 @@
 import { FC, useContext } from 'react'
 import CardHeader from 'domains/personal-accountant/presentation/components/molecules/card-header/CardHeader'
-import { getTypeDetail } from 'domains/personal-accountant/presentation/utils/getTypeDetail'
+import { OptionsTypeDetail, getTypeDetail } from 'domains/personal-accountant/presentation/utils/getTypeDetail'
 import Detail, { TypeDetailBody } from 'domains/personal-accountant/domain/clases/Details'
 import DetailContext from 'domains/personal-accountant/presentation/context/DetailContext'
 
@@ -16,7 +16,7 @@ const CardDetail: FC<PropsCardDetail> = ({ detail }) => {
             <div>
                 <h3 className='cards__item-title'>{detail[Detail.name]}
                     <small>{detail[Detail.amountOfMoney]}</small>
-                    <small>{getTypeDetail(+detail[Detail.detailTypeId])}</small>
+                    <small>{getTypeDetail(+detail[Detail.detailTypeId] as OptionsTypeDetail)}</small>
                 </h3>
             </div>
             <p>{detail[Detail.description]}</p>

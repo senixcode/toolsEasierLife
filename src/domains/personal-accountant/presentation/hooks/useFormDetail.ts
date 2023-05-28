@@ -8,7 +8,7 @@ import { formatDate } from 'domains/personal-accountant/infrastructure/adapters/
 const initialForm = {
     [Detail.id]: "",
     [Detail.name]: "",
-    [Detail.amount]: "0",
+    [Detail.amount]: "1",
     [Detail.detailTypeId]: "0",
     [Detail.amountOfMoney]: "0",
     [Detail.description]: "",
