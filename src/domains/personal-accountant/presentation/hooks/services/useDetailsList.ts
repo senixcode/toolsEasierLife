@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useQuery } from "@tanstack/react-query"
 import DetailService from "domains/personal-accountant/infrastructure/services/detail/detail.services"
-import Detail, { TypeDetailBody } from "@/domains/personal-accountant/domain/clases/Details"
+import { TypeDetailBody } from "@/domains/personal-accountant/domain/clases/Details"
 import { TypeDetailContext } from "../../context/DetailContext"
 import { OptionsTypeDetail } from "../../utils/getTypeDetail"
 import getTotalByDetailType from "@/domains/personal-accountant/infrastructure/adapters/getTotalByDetailType"
