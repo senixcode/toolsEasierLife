@@ -1,15 +1,10 @@
 import { useEffect, useState } from "react"
 import { useQuery } from "@tanstack/react-query"
 import DetailService from "domains/personal-accountant/infrastructure/services/detail/detail.services"
-import { TypeDetailBody } from "@/domains/personal-accountant/domain/clases/Details"
+import Detail, { TypeDetailBody } from "@/domains/personal-accountant/domain/clases/Details"
 import { TypeDetailContext } from "../../context/DetailContext"
 import { OptionsTypeDetail } from "../../utils/getTypeDetail"
-
-const getTotalByDetailType = (details: TypeDetailBody[], detailTypeId: OptionsTypeDetail) => {
-    return details
-        .filter(detail => detail.detailTypeId === `${detailTypeId}`)
-        .reduce((acc, cur) => acc + parseInt(cur.amountOfMoney), 0);
-}
+import getTotalByDetailType from "@/domains/personal-accountant/infrastructure/adapters/getTotalByDetailType"
 
 function useDetailsList(): TypeDetailContext {
 
@@ -43,13 +38,13 @@ function useDetailsList(): TypeDetailContext {
 
     useEffect(() => {
         console.log("useEffect details");
-        
+
         setTotalIncome(getTotalIncome)
         setTotalEgress(getTotalEgress)
     }, [details])
 
     let refresh = (): void | any => refetch()
-    return { status, details, setDetails, error, isFetching, refresh, resetDetails, exportDetails, totalIncome, totalEgress   }
+    return { status, details, setDetails, error, isFetching, refresh, resetDetails, exportDetails, totalIncome, totalEgress }
 }
 
 export default useDetailsList
