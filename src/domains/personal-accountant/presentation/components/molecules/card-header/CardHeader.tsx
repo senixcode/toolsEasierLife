@@ -25,7 +25,7 @@ const CardHeader: FC<PropsCardHeader> = ({ detail }) => {
         <div className='card__header'>
             
             <IconCustom
-                btnClass="btn-icon"
+                btnClass="btn-icon blue"
                 ciconOnclick={handleEdit}
                 icon={icon.cilPencil}
             />
