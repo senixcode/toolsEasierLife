@@ -8,9 +8,9 @@ const Totals = () => {
     const { details, totalIncome, totalEgress } = useContext(DetailContext)
     return (
         <div className='flex-center total-container'>
-            <label > Detalles: {isEmptyArray(details, Detail.name) ? 0 : details?.length}</label>
-            <label > Ingresos: {"S/" + totalIncome}</label>
-            <label > Egresos: {"S/" + totalEgress}</label>
+            <label className='bg-details' > Detalles: {isEmptyArray(details, Detail.name) ? 0 : details?.length}</label>
+            <label className='bg-income'> Ingresos: {"S/" + totalIncome}</label>
+            <label className='bg-egress'> Egresos: {"S/" + totalEgress}</label>
         </div>
     )
 }

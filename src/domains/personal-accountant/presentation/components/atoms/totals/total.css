@@ -2,3 +2,14 @@
     column-gap: 3rem;
     margin-top: 2rem;
 }
+
+.bg-details{
+    background-color: #FEF9E7
+}
+
+.bg-income{
+    background-color: #E8F8F5
+}
+.bg-egress{
+    background-color: #F9EBEA
+}
