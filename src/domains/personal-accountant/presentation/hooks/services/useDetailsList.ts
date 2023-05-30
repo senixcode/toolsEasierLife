@@ -30,21 +30,32 @@ function useDetailsList(): TypeDetailContext {
         link.download = `export-${Date.now()}.json`;
 
         link.click();
-    };
+    }
+    let refresh = (): void | any => refetch()
+
 
     useEffect(() => {
         resetDetails()
     }, [data])
 
     useEffect(() => {
-        console.log("useEffect details");
-
         setTotalIncome(getTotalIncome)
         setTotalEgress(getTotalEgress)
     }, [details])
 
-    let refresh = (): void | any => refetch()
-    return { status, details, setDetails, error, isFetching, refresh, resetDetails, exportDetails, totalIncome, totalEgress }
+
+    return {
+        status,
+        details,
+        setDetails,
+        error,
+        isFetching,
+        refresh,
+        resetDetails,
+        exportDetails,
+        totalIncome,
+        totalEgress
+    }
 }
 
 export default useDetailsList
