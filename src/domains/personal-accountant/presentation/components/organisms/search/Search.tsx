@@ -6,7 +6,7 @@ import useDetailSearch from 'domains/personal-accountant/presentation/hooks/serv
 import './search.css'
 import DetailContext from '../../../context/DetailContext'
 
-const title = "Busqueda por nombre y descripción"
+const title = "Busqueda por nombre y descripción, enter para buscar"
 
 function Search() {
     const inputFile = useRef<any>(null)
