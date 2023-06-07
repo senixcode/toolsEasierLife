@@ -17,6 +17,7 @@ const ModalAlertDeleteProvider: FC<Props> = ({ children }) => {
     const changeDetail = (data?: TypeDetailBody) => {
         data && setDetail(data)
     } 
+    
     const handleDeleted = () => {
         handleChangeIsShow()
         if (detail) 
