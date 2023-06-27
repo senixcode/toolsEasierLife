@@ -7,12 +7,13 @@ export enum User {
 }
 
 export interface TypeSignIn {
-    [User.password]: string
-    [User.email]: string
+    [User.password]?: string
+    [User.email]?: string
+    token?:string
 }
 
 export interface TypeSignUp extends TypeSignIn {
-    [User.name]: string
+    [User.name]?: string
 }
 
 export interface TypeUser extends TypeSignUp {
