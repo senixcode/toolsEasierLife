@@ -27,7 +27,6 @@ function SignUpPage() {
                 <GoogleLogin
                     onSuccess={credentialResponse => {
                         const token = credentialResponse?.credential
-                        console.log("credentialResponse", credentialResponse);
 
                         if (token) handleSignUp({ token } as TypeSignUp)
                     }}
