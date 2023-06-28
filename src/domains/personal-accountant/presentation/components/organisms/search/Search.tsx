@@ -1,41 +1,22 @@
-import { useContext, useRef, useState } from 'react'
+import { useContext } from 'react'
 import * as icon from '@coreui/icons'
 import IconCustom from 'domains/personal-accountant/presentation/components/atoms/iconcustom/IconCustom'
 import ModalContext from '@/domains/personal-accountant/presentation/context/ModalRegisterContext'
 import useDetailSearch from 'domains/personal-accountant/presentation/hooks/services/useDetailSearch'
 import './search.css'
 import DetailContext from '../../../context/DetailContext'
+import useDetailCreateMasive from '../../../hooks/services/useDetailCreateMasive'
+
 
 const title = "Busqueda por nombre y descripción, enter para buscar"
 
 function Search() {
-    const inputFile = useRef<any>(null)
     const { handleRegisterModal } = useContext(ModalContext)
     const { onChange, searchDetail } = useDetailSearch()
     const { status } = useContext(DetailContext)
     const { exportDetails } = useContext(DetailContext)
+    const {handleImportFile, inputFile} = useDetailCreateMasive()
     
-    function handleImportFile(e: any) {
-        const getFile = e.target.files[0]
-        const clearFile = () => e.target.value = ""
-        if (!getFile) {
-            clearFile()
-            return;
-        }
-
-        new Response(getFile).json().then(json => {
-            console.log(typeof json)
-            console.log(json)
-            clearFile()
-        }, err => {
-            console.log("handleImportFile", err);
-            clearFile()
-        })
-
-
-
-    }
-
     if (status === 'error') return (<></>)
     return (
         <section className='section-header'>
