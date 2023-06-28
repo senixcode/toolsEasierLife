@@ -1,7 +1,7 @@
 import detailInputAdapter from 'domains/personal-accountant/infrastructure/adapters/detailInput.adapter'
 import detailOutputAdapter from 'domains/personal-accountant/infrastructure/adapters/detailOutput.adapter'
 import detailValidateAdapter, { messageRequirements } from 'domains/personal-accountant/infrastructure/adapters/detailValidate.adapter'
-import { TypeDetailBody } from 'domains/personal-accountant/domain/clases/Details'
+import { TypeDetail, TypeDetailBody } from 'domains/personal-accountant/domain/clases/Details'
 import Conection from 'domains/personal-accountant/infrastructure/services/config'
 
 class DetailService extends Conection {
@@ -15,6 +15,15 @@ class DetailService extends Conection {
         try {
             const result = await this.instance.get(`/${this.#path}`)
             return detailOutputAdapter(result.data)
+        } catch (error) {
+            console.log("DetailService().list()", error);
+        }
+    }
+
+    async createdMassive(body: TypeDetail[]) {
+        try {
+            const result = await this.instance.post(`/${this.#path}/all`, body)
+            return result.data
         } catch (error) {
             console.log("DetailService().list()", error);
         }
