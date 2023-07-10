@@ -3,7 +3,7 @@ import Modal from 'react-modal'
 import ModalContext from '@/domains/personal-accountant/presentation/context/ModalRegisterContext'
 import useRegisterModal from '@/domains/personal-accountant/presentation/hooks/useRegisterModal'
 
-Modal.setAppElement("#root")
+
 
 type Props = {
     children?: React.ReactNode

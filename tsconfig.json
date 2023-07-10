@@ -20,7 +20,7 @@
     "noFallthroughCasesInSwitch": true,
 
     "baseUrl": ".",
-    "types": ["node"],
+    "types": ["vitest/globals"],
     "paths": {
       "@/*": ["./src/*"],
       "assets/*": ["./src/assets/*"],

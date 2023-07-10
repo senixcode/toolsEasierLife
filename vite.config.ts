@@ -1,5 +1,8 @@
-import { defineConfig } from 'vite'
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
+
 import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'
 import EnvPLugin from 'vite-plugin-environment'
 import * as path from 'path'
 
@@ -15,4 +18,11 @@ export default defineConfig({
       { find: 'shared', replacement: path.resolve(__dirname, 'src/shared') }
     ]
   },
+  test:{
+    globals: true,
+    environment: "jsdom",
+    include: ["./src/**/*.spec.{ts,tsx}"],
+    exclude: ["./src/**/*.mock.{ts,tsx}"],
+    setupFiles: ['./vitest/setup.ts'],
+  }
 })

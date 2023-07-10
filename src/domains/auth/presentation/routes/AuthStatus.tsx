@@ -26,13 +26,6 @@ function AuthStatus() {
                 <nav>
                     <Link
                         className='link blue-color'
-                        to="/protected">
-                        Protected
-                    </Link>
-                </nav>
-                <nav>
-                    <Link
-                        className='link blue-color'
                         to={Paths.personal_accountant}>
                         Contador personal
                     </Link>
