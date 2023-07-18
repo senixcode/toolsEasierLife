@@ -1,6 +1,5 @@
-import AuthRoutes from "@/domains/auth/presentation/routes/AuthRoutes";
 import { render } from "@testing-library/react";
-import { userEvent } from "node_modules/@testing-library/user-event/dist/types/setup";
+import  userEvent from "@testing-library/user-event";
 import { ReactElement } from "react";
 import { MemoryRouter, BrowserRouter } from "react-router-dom";
 import { buildAuthQueryWrapper, buildQueryWrapper } from "shared/test/react-query-test-utils";

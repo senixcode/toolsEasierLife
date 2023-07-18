@@ -8,10 +8,10 @@ import PersonalAccountant from "@/domains/personal-accountant/presentation/pages
 import Paths from "../const/Paths";
 import PublicPage from "../pages/HomePublicPage";
 
-const RoutesAll = () => (
+export const RoutesAll = () => (
     <Routes>
                 <Route element={<Layout />}>
-                <Route index element={<SignInPage/>} />
+                <Route index element={<PublicPage/>} />
                     <Route path={Paths.home} element={<PublicPage />} />
                     <Route
                         path={Paths.personal_accountant}

@@ -5,7 +5,7 @@ import Paths from "../const/Paths";
 function RequireAuth({ children }: { children: JSX.Element }) {
     const user = localStorage.getItem(LocalStorage.USER);
     let location = useLocation()
-
+        
     if (!user) {
         // Redirect them to the /login page, but save the current location they were
         // trying to go to when they were redirected. This allows us to send them

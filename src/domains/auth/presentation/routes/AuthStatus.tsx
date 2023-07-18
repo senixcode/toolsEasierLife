@@ -14,7 +14,7 @@ function AuthStatus() {
             <Link
                 className='link blue-color'
                 to="/">
-                ToolsEasierLife
+                Home
             </Link>
         </div>
     }
